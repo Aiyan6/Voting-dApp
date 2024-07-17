@@ -1,0 +1,18 @@
+header {
+    position: absolute;
+
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+    height: 150px;
+    background-color: rgb(245, 243, 243);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    width: 100px;
+}
