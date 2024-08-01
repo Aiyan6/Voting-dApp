@@ -17,7 +17,6 @@ function App() {
   const [votingStatus, setVotingStatus] = useState(true);
   const [remainingTime, setRemainingTime] = useState(null);
   const [options, setOptions] = useState([]);
-  const [number, setNumber] = useState(null);
   const [CanVote, setCanVote] = useState(true);
   const [question, setQuestion] = useState('');
 
@@ -38,7 +37,7 @@ function App() {
   });
 
 
-  async function vote() {
+  async function vote(number) {
       const provider = new ethers.BrowserProvider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
@@ -155,8 +154,7 @@ function App() {
   }
 
   async function handleOptionButtons(number) {
-    setNumber(number);
-    vote();
+    vote(number);
   }
 
   getQuestion();
